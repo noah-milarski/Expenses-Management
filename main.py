@@ -1,3 +1,5 @@
+#TODO Thomas, faça a importação da classe Expense
+
 def main():
     pass
 
