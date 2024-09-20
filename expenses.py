@@ -11,8 +11,17 @@ class Expenses:
         :type amount: float
         :raises ValueError: If `amount` is less than or equal to zero.
         """
-        if amount <= 0:
-            raise ValueError("the amount should be greater than 0")
+        #adicionei um while que vi em um outro projeto. mas não coloquei input
+        while True:
+
+            if amount.isdigit():
+                amount = float(amount)
+                if amount <= 0:
+                    raise ValueError("the amount should be greater than 0")
+                else:
+                    break
+            else:
+                print('Please, enter a number.')
 
         self.description = description
         self.amount = amount
@@ -25,6 +34,7 @@ class Expenses:
         :return: Description and amount of the expense.
         :rtype: str
         """
+
         return f'Expense: {self.description}, Amount: R${self.amount:.2f}'
 
     @property
