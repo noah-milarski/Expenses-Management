@@ -12,16 +12,8 @@ class Expenses:
         :raises ValueError: If `amount` is less than or equal to zero.
         """
         #adicionei um while que vi em um outro projeto. mas não coloquei input
-        while True:
-
-            if amount.isdigit():
-                amount = float(amount)
-                if amount <= 0:
-                    raise ValueError("the amount should be greater than 0")
-                else:
-                    break
-            else:
-                print('Please, enter a number.')
+        if amount <= 0:
+            raise ValueError("the amount should be greater than 0")
 
         self.description = description
         self.amount = amount
